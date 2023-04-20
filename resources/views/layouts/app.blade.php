@@ -35,7 +35,39 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @guest
+                            
+                        @else
+                            <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Employees
+                            </a>
 
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('employees') }}">
+                                    List Employee
+                                </a>
+                                <a class="dropdown-item" href="{{ route('employees.create') }}">
+                                    Add Employee
+                                </a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Task
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('tasks') }}">All Task</a>
+                                <a class="dropdown-item" href="{{ route('tasks.create') }}">Add Task</a>
+                                <a class="dropdown-item" href="{{ route('assign') }}">Assign Task</a>
+                                <a class="dropdown-item" href="">Change Assignee</a>
+                                
+
+                            </div>
+                        </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
